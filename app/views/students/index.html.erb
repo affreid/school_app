@@ -1,12 +1,32 @@
-<% binding.pry %>
+<div clas="row">
+	<div class="col-md-6 col-offset-2">
+		<h1>Student List</h1>
+	</div>
+</div>
 
-<h1>Student List</h1>
+<div clas="row">
+	<div class="col-md-9">
+		<%= link_to "Add new Student", new_student_path %>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Email</th>
+					<th>Full Name</th>
+					<th>Options</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @students.each do |student| %>
+					<tr>
+						<td><%= link_to student.email, student_path(student) %></td>
+						<td><%= student.full_name %></td>
+						<td><%= link_to "Delete", student_path(student), method: :delete, data: {confirm: "Are you sure"} %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
 
-<ul>
-	<% @students.each do |student| %>
-		<li>
-				<span><%= student.email %></span> |
-				<span><%= student.full_name %></span>
-		</li>
-	<% end %>
-</ul>
+</div>
+
+

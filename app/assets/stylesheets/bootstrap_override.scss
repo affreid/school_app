@@ -1,0 +1,22 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body { 
+	padding-top: 70px; 
+}
+
+nav{
+	ul.nav{
+		padding-top: 11px;
+
+		.user-email{
+			color: white;
+			margin-right: 7px;
+			font-size: 20px;
+		}
+	}
+}
+
+.checkbox_container input{
+	display: inline;
+}

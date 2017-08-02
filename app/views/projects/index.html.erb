@@ -1,0 +1,20 @@
+<h1>Project List</h1>
+
+<%= link_to "Add new Project", new_project_path %>
+
+<%= form_tag("/search", method: :get) do %>
+	<%= label_tag(:search, "Search") %>
+	<%= text_field_tag(:search) %>
+	<%= submit_tag("Search") %>
+<% end %>
+
+<ul>
+	<% @projects.each do |project| %>
+		<li>
+				<span><%= link_to project.name, project_path(project) %></span> |
+				<span>
+					<%= link_to "Delete", project_path(project), method: :delete, data: {confirm: "Are you sure?"} %>
+				</span>
+		</li>
+	<% end %>
+</ul>

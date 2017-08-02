@@ -1,0 +1,7 @@
+<h1>Project Details</h1>
+
+<%= link_to "Back to Project List", projects_path %>
+<%= link_to "Edit", edit_project_path(@project) %>
+
+<h1><span>Name</span>: <%= @project.name %></h1>
+<h2><span>Created</span>: <%= time_ago_in_words(@project.created_at) %> ago </h2>

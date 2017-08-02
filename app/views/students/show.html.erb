@@ -1,0 +1,26 @@
+<h1>Student Profile</h1>
+
+<%= link_to "Back to Student List", students_path %>
+<%= link_to "Edit", edit_student_path(@student) %>
+
+<h1><span>Email</span>: <%= @student.email %></h1>
+<h2><span>Full Name</span>: <%= @student.full_name %></h2>
+<h2><span>Phone</span>: <%= formatted_phone_number(@student.phone) %></h2>
+<h2><span>Hero Name</span>: <%= @student.hero %></h2>
+<h2><span>Created</span>: <%= time_ago_in_words(@student.created_at) %> ago </h2>
+
+<h2>Projects</h2>
+
+<ul>
+	<% @projects.each do |project| %>
+		<li><%= project.name %></li>
+	<% end %>
+</ul>
+
+<h2>Courses</h2>
+
+<ul>
+	<% @courses.each do |course| %>
+		<li><%= course.name %></li>
+	<% end %>
+</ul>

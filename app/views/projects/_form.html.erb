@@ -1,0 +1,7 @@
+<%= form_for @project do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<%= f.collection_select(:student_id, Student.all, :id, :full_name, prompt: true) %>
+
+	<%= f.submit %>
+<% end %>
