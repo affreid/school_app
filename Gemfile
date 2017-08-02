@@ -9,9 +9,8 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 
-gem 'rails_12factor', group: :production
+gem 'pg'
 
 gem 'jquery-rails'
 
@@ -59,7 +58,7 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
+  gem 'rails_12factor'
 end
 
 ruby "2.4.0"
